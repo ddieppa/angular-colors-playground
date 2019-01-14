@@ -1,0 +1,47 @@
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid lightblue;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 5px;
+}
+
+th {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+th.fixedWidth {
+  width: 30px;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+#txtSearch {
+  margin: 0 15px 0 3px;
+}
+
+.right-aligned {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.left-aligned {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}

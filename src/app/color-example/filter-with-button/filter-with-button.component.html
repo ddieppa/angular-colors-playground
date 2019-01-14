@@ -1,0 +1,25 @@
+<h4>Filtering colors with button.</h4>
+<h5>(We are using NgModel. Dont' forget to import the FormsModule).</h5>
+
+<div class="searchContainer">
+  <label for="txtSearch">Search: </label>
+  <input type="text" id="txtSearch" [(ngModel)]="colorName" />
+  <button id="btnSearch" (click)="searchColor()">Search</button>
+</div>
+
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Hex</th>
+    <th class="fixedWidth">Sample</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let color of filterColors">
+      <td>{{ color.colorId }}</td>
+      <td>{{ color.name }}</td>
+      <td>{{ color.hexString }}</td>
+      <td [ngStyle]="{ 'background-color': color.hexString }"></td>
+    </tr>
+  </tbody>
+</table>

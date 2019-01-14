@@ -1,0 +1,53 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 70px;
+  background-color: cornflowerblue;
+  color: darkblue;
+}
+
+.content-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.sidenav {
+  min-width: 100px;
+  height: auto;
+  padding: 5px 15px;
+}
+
+.content {
+  width: 100%;
+  min-width: 200px;
+  padding: 5px 15px;
+}
+
+a {
+  text-decoration: none;
+  color: darkblue;
+}
+
+.more-resources {
+  min-width: 200px;
+  padding: 5px 15px;
+}
+
+.samples {
+  padding-bottom: 15px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: lightgray;
+  min-height: 20px;
+  max-height: 20px;
+}

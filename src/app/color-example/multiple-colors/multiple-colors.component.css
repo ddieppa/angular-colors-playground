@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid lightblue;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 5px;
+}
+
+th {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+th.fixedWidth {
+  width: 20px;
+  padding: 0;
+}
+
+td.fixedWidth {
+  width: 20px;
+  padding: 0;
+}

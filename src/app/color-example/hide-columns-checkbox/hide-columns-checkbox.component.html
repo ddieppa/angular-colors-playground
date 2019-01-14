@@ -1,0 +1,26 @@
+<div class="searchContainer">
+  <label>
+    <input type="checkbox" (change)="ToggleVisibility($event)" /> RGB
+  </label>
+</div>
+
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Hex</th>
+    <th *ngIf="chkRGBMarked">RGB</th>
+    <th class="fixedWidth">Sample</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let color of colors">
+      <td>{{ color.colorId }}</td>
+      <td>{{ color.name }}</td>
+      <td>{{ color.hexString }}</td>
+      <td *ngIf="chkRGBMarked">
+        R:{{ color.rgb.r }},G:{{ color.rgb.g }}, B:{{ color.rgb.b }}
+      </td>
+      <td [ngStyle]="{ 'background-color': color.hexString }"></td>
+    </tr>
+  </tbody>
+</table>

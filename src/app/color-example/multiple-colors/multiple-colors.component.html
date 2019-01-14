@@ -1,0 +1,48 @@
+<h4>Different ways to bind color dinamically.</h4>
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Hex</th>
+    <th class="fixedWidth">Ex1</th>
+    <th class="fixedWidth">Ex2</th>
+    <th class="fixedWidth">Ex3</th>
+    <th class="fixedWidth">Ex4</th>
+    <th class="fixedWidth">Ex5</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let color of colors">
+      <td>{{ color.colorId }}</td>
+      <td>{{ color.name }}</td>
+      <td>{{ color.hexString }}</td>
+      <td class="fixedWidth">
+        <div
+          [style.background-color]="color.hexString"
+          [style.width.px]="20"
+          [style.height.px]="20"
+        ></div>
+      </td>
+      <td class="fixedWidth">
+        <div
+          [ngStyle]="{ 'background-color': color.hexString }"
+          [style.width.px]="20"
+          [style.height.px]="20"
+        ></div>
+      </td>
+      <td class="fixedWidth">
+        <div
+          [ngStyle]="{
+            'background-color': color.hexString,
+            'width.px': '20',
+            'height.px': '20'
+          }"
+        ></div>
+      </td>
+      <td class="fixedWidth" [style.background-color]="color.hexString"></td>
+      <td
+        class="fixedWidth"
+        [ngStyle]="{ 'background-color': color.hexString }"
+      ></td>
+    </tr>
+  </tbody>
+</table>

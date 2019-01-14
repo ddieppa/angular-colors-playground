@@ -1,0 +1,38 @@
+<div class="searchContainer">
+  <div class="right-aligned">
+    <label for="txtSearch">Search: </label>
+    <input type="text" id="txtSearch" [(ngModel)]="colorName" />
+    <label for="">Filter by: {{ colorName }}</label>
+  </div>
+
+  <div class="right-aligned">
+    <label> <input type="checkbox" [(ngModel)]="chkHEXMarked" /> HEX </label>
+    <label> <input type="checkbox" [(ngModel)]="chkRGBMarked" /> RGB </label>
+    <label> <input type="checkbox" [(ngModel)]="chkHSLMarked" /> HSL </label>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th *ngIf="chkHEXMarked">HEX</th>
+    <th *ngIf="chkRGBMarked">RGB</th>
+    <th *ngIf="chkHSLMarked">HSL</th>
+    <th class="fixedWidth">Sample</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let color of filterColors">
+      <td>{{ color.colorId }}</td>
+      <td>{{ color.name }}</td>
+      <td *ngIf="chkHEXMarked">{{ color.hexString }}</td>
+      <td *ngIf="chkRGBMarked">
+        Red:{{ color.rgb.r }}, Green:{{ color.rgb.g }}, Blue:{{ color.rgb.b }}
+      </td>
+      <td *ngIf="chkHSLMarked">
+        Hue:{{ color.hsl.h }}, Sat:{{ color.hsl.s }}, Light:{{ color.hsl.l }}
+      </td>
+      <td [ngStyle]="{ 'background-color': color.hexString }"></td>
+    </tr>
+  </tbody>
+</table>
